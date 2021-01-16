@@ -1,0 +1,17 @@
+.geo-style2
+{
+    font:italic 1.2em Georgia, serif;
+    text-align: center;
+}
+.button {
+    background-color: #5060f0;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 2px 1px;
+    cursor: pointer;
+  }

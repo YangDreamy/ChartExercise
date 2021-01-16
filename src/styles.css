@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import '~bootstrap/scss/bootstrap';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+
+.ng-touched.ng-invalid {
+  @extend .is-invalid;
+} */
+.div1 {
+  /* width: 700px; */
+    height: 25em;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-around; /*元素在主轴（页面）上居中排列*/
+    align-items:center;
+    border: 2px solid rgb(53, 127, 238);
+}
+.div2 {
+  /* width: 700px; */
+    height: 8em;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:space-around; /*元素在主轴（页面）上居中排列*/
+    align-items:center;
+    border: 2px solid rgb(53, 127, 238);
+}

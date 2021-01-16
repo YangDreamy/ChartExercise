@@ -1,0 +1,88 @@
+<div style="height: 100%;">
+    <!-- <div style="width: 720px; display:inline; background-color: rgb(238, 245, 238);"></div> -->
+    <!-- <div class="div1" style="width:360px;border: 4px solid goldenrod;"> -->
+    <div class="div1">
+        <article>
+            
+            <div class="geo-style2">start time</div>
+            <dl-date-time-picker
+        
+            startView="day"
+            maxView="year"
+            minView="hour"
+            minuteStep="1"
+            [(ngModel)]="selectedDate1"
+            >
+            </dl-date-time-picker>
+        </article>
+        <article>
+            <div class="geo-style2">end time</div>
+            <dl-date-time-picker 
+        
+            startView="day"
+            maxView="year"
+            minView="hour"
+            minuteStep="1"
+            [(ngModel)]="selectedDate2"
+        >
+            </dl-date-time-picker>
+        </article>
+    </div>
+    <div class="geo-style2">
+        <button class="button" (click) = showDate()> Make Sure your time</button>
+        You want to check the price change from <input [(ngModel)] = "SDate1" readonly = true> to <input [(ngModel)] = "SDate2" readonly = true>
+    </div> 
+    <hr>
+    <div class="div2">
+        <article>
+            <div class="geo-style2">Please choose your country:
+                
+            </div>
+            
+            <hr>
+            <span>
+                <div class="geo-style2">
+                <label *ngFor="let item of ContryList">
+                    <input type="checkbox" value={{item.name}} 
+                    (click)="selectCheckbox($event.target.checked,item.name)">{{item.title}} &nbsp;&nbsp;
+                   
+                </label>  
+                <button class="button" (click) = drawLine()> LineChart </button>  
+                <button class="button" (click) = drawBar()> BarChart </button>  
+                </div>
+            </span>
+            
+        </article>
+    </div>
+    
+   
+    <div>
+        <highcharts-chart 
+            
+            id="container"
+            [Highcharts]="Highcharts"
+            [constructorType]="chartConstructor"
+            [options]="chartOptions"
+            [callbackFunction]="chartCallback"
+            [(update)]="updateFlag"
+            [oneToOne]="true"
+
+            style="width: 100%; height: 400px; display: block;"
+        ></highcharts-chart>
+    </div>
+    <hr>
+    <div>
+        <highcharts-chart 
+            
+            id="container"
+            [Highcharts]="Highcharts"
+            [constructorType]="chartConstructor"
+            [options]="chartOptionsbar"
+            [callbackFunction]="chartCallback"
+            [(update)]="updateFlag"
+            [oneToOne]="true"
+
+            style="width: 100%; height: 400px; display: block;"
+        ></highcharts-chart>
+    </div>
+</div>
